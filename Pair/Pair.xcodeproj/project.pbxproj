@@ -12,7 +12,10 @@
 		5A662D831E8EABB40084FF9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A662D821E8EABB40084FF9C /* Assets.xcassets */; };
 		5A662D861E8EABB40084FF9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A662D841E8EABB40084FF9C /* LaunchScreen.storyboard */; };
 		5A662D931E8EAC930084FF9C /* PairTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D921E8EAC930084FF9C /* PairTableViewController.swift */; };
-		5A662D951E8EAEF30084FF9C /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D941E8EAEF30084FF9C /* Object.swift */; };
+		5A662D971E8EB14A0084FF9C /* NameContorller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D961E8EB14A0084FF9C /* NameContorller.swift */; };
+		5A662D9A1E8EB2760084FF9C /* Pair.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D981E8EB2760084FF9C /* Pair.xcdatamodeld */; };
+		5A662D9E1E8EB39C0084FF9C /* Object+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D9D1E8EB39C0084FF9C /* Object+Convenience.swift */; };
+		5A662DA01E8EB4280084FF9C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A662D9F1E8EB4280084FF9C /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +25,11 @@
 		5A662D821E8EABB40084FF9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A662D851E8EABB40084FF9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A662D871E8EABB40084FF9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5A662D921E8EAC930084FF9C /* PairTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairTableViewController.swift; sourceTree = "<group>"; };
-		5A662D941E8EAEF30084FF9C /* Object.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		5A662D921E8EAC930084FF9C /* PairTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PairTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5A662D961E8EB14A0084FF9C /* NameContorller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NameContorller.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5A662D991E8EB2760084FF9C /* Pair.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pair.xcdatamodel; sourceTree = "<group>"; };
+		5A662D9D1E8EB39C0084FF9C /* Object+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = "Object+Convenience.swift"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5A662D9F1E8EB4280084FF9C /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CoreDataStack.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,9 @@
 		5A662D8F1E8EAC0E0084FF9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5A662D941E8EAEF30084FF9C /* Object.swift */,
+				5A662D981E8EB2760084FF9C /* Pair.xcdatamodeld */,
+				5A662D9F1E8EB4280084FF9C /* CoreDataStack.swift */,
+				5A662D9D1E8EB39C0084FF9C /* Object+Convenience.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -95,6 +103,7 @@
 		5A662D901E8EAC170084FF9C /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				5A662D961E8EB14A0084FF9C /* NameContorller.swift */,
 			);
 			name = ModelController;
 			sourceTree = "<group>";
@@ -180,8 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A662D971E8EB14A0084FF9C /* NameContorller.swift in Sources */,
 				5A662D7C1E8EABB40084FF9C /* AppDelegate.swift in Sources */,
-				5A662D951E8EAEF30084FF9C /* Object.swift in Sources */,
+				5A662D9A1E8EB2760084FF9C /* Pair.xcdatamodeld in Sources */,
+				5A662DA01E8EB4280084FF9C /* CoreDataStack.swift in Sources */,
+				5A662D9E1E8EB39C0084FF9C /* Object+Convenience.swift in Sources */,
 				5A662D931E8EAC930084FF9C /* PairTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +362,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5A662D981E8EB2760084FF9C /* Pair.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5A662D991E8EB2760084FF9C /* Pair.xcdatamodel */,
+			);
+			currentVersion = 5A662D991E8EB2760084FF9C /* Pair.xcdatamodel */;
+			path = Pair.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5A662D701E8EABB40084FF9C /* Project object */;
 }

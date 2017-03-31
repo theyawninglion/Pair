@@ -12,7 +12,7 @@
         <!--Pair Randomizer-->
         <scene sceneID="8tZ-Sm-fKY">
             <objects>
-                <tableViewController id="BSG-dB-86C" sceneMemberID="viewController">
+                <tableViewController id="BSG-dB-86C" customClass="PairTableViewController" customModule="Pair" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ZJP-7v-cfx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,9 +21,12 @@
                             <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" title="Randomize"/>
+                            <connections>
+                                <action selector="randomButtonTapped:" destination="BSG-dB-86C" eventType="touchUpInside" id="Cpa-Ge-LYN"/>
+                            </connections>
                         </button>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="objectCell" textLabel="0gy-Ge-avU" style="IBUITableViewCellStyleDefault" id="jkU-dZ-aw3">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="nameCell" textLabel="0gy-Ge-avU" style="IBUITableViewCellStyleDefault" id="jkU-dZ-aw3">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jkU-dZ-aw3" id="Ttf-RG-xv2">
@@ -47,7 +50,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pair Randomizer" id="uB7-xL-2HT">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="veH-JP-Hmk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="veH-JP-Hmk">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="BSG-dB-86C" id="E9j-Aj-XbW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UuA-uG-3Xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
