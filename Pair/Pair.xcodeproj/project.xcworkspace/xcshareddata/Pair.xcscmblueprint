@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EFFBF2CAE04081CBD13C91689D67EDD88DAB1F1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4EFFBF2CAE04081CBD13C91689D67EDD88DAB1F1" : 9223372036854775807,
+    "C913094A1114E7F864384C0386E84D67A346CC6D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5D6F5B14-EB5C-4873-9908-19A105DD9F09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4EFFBF2CAE04081CBD13C91689D67EDD88DAB1F1" : "Pair\/",
+    "C913094A1114E7F864384C0386E84D67A346CC6D" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pair",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pair\/Pair.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/theyawninglion\/Pair.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EFFBF2CAE04081CBD13C91689D67EDD88DAB1F1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/theyawninglion\/MovieSearch.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C913094A1114E7F864384C0386E84D67A346CC6D"
+    }
+  ]
+}
