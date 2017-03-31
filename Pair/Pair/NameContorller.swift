@@ -13,31 +13,23 @@ class NameController {
     
     static let shared = NameController()
     let moc = CoreDataStack.context
-//    
-//    let fetchedResultsController: NSFetchedResultsController<Name>
-//    
-//    init() {
-//        let request: NSFetchRequest<Name> = Name.fetchRequest()
-//        let sortDescriptor = NSSortDescriptor()
-//        request.sortDescriptors = [sortDescriptor]
-//        
-//        self.fetchedResultsController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: moc, sectionNameKeyPath: nil, cacheName: nil)
-//        do {
-//            try self.fetchedResultsController.performFetch()
-//        } catch {
-//            print("couldn't fetch Names from moc through FRC")
-//        }
-//    }
-//    
     
+    var sections: Int {
+        if names.count % 2 == 0 {
+            return names.count / 2
+        } else {
+            return names.count / 2 + 1
+        }
+        
+    }
     
     //MARK: - crud
     
-    func create(name: String) {
+    func create(name: String) -> Name {
         
-        let _ = Name(name: name)
+        let name = Name(name: name)
         save()
-
+        return name
     }
     
     var names: [Name] {

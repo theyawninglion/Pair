@@ -9,12 +9,14 @@
 import UIKit
 import GameKit
 class PairTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        names = NameController.shared.names
+        
     }
-    var names: Array<Any> = []
+    var names: [Name] = []
     
     //MARK: - button actions
     
@@ -23,8 +25,9 @@ class PairTableViewController: UITableViewController {
     }
     
     @IBAction func randomButtonTapped(_ sender: Any) {
-        let shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: names)
-        names.append(contentsOf: shuffledArray)
+        
+        names.shuffle()
+        tableView.reloadData()
     }
     
     func addAlert() {
@@ -39,8 +42,8 @@ class PairTableViewController: UITableViewController {
         let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
             
             guard let name = nameTextField?.text else { return }
-            NameController.shared.create(name: name)
-            self.names.append(name)
+            let inputName = NameController.shared.create(name: name)
+            self.names.append(inputName)
             self.tableView.reloadData()
         }
         alertController.addAction(cancelAction)
@@ -52,22 +55,28 @@ class PairTableViewController: UITableViewController {
     
     
     // MARK: - Table view data source
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        let sections = NameController.shared.names.count
-//        if sections > 1 {
-//            return 1
-//        } else {
-//            return sections
-//        }
-//    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Group \([section + 1][0])"
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return NameController.shared.sections
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return NameController.shared.names.count
+        if NameController.shared.names.count % 2 != 0  && section == NameController.shared.sections - 1 {
+            return 1
+        } else {
+            return 2
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "nameCell", for: indexPath)
-        let name = NameController.shared.names[indexPath.row]
+        
+        let index = indexPath.row + (NameController.shared.sections * indexPath.section)
+        let name = names[index]
         cell.textLabel?.text = name.name
         
         return cell
@@ -79,6 +88,21 @@ class PairTableViewController: UITableViewController {
             let name = NameController.shared.names[indexPath.row]
             NameController.shared.delete(name: name)
             tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+}
+
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        
+        for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
         }
     }
 }
