@@ -14,7 +14,7 @@ class PairTableViewController: UITableViewController {
         super.viewDidLoad()
         
     }
-    var entryArray: Array<Any> = []
+    var names: Array<Any> = []
     
     //MARK: - button actions
     
@@ -23,8 +23,8 @@ class PairTableViewController: UITableViewController {
     }
     
     @IBAction func randomButtonTapped(_ sender: Any) {
-        let shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: entryArray)
-        entryArray.append(contentsOf: shuffledArray)
+        let shuffledArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: names)
+        names.append(contentsOf: shuffledArray)
     }
     
     func addAlert() {
@@ -40,7 +40,7 @@ class PairTableViewController: UITableViewController {
             
             guard let name = nameTextField?.text else { return }
             NameController.shared.create(name: name)
-            self.entryArray.append(name)
+            self.names.append(name)
             self.tableView.reloadData()
         }
         alertController.addAction(cancelAction)
